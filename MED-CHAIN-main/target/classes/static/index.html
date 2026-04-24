@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMS Medical Records</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="login-screen" class="glass-panel">
+    <div class="login-box">
+        <h2>Hospital Login</h2>
+        <div class="demo-hints">
+            <strong>Demo Accounts:</strong><br>
+            admin / doctor / patient<br>
+            <em>(password is same as username)</em>
+        </div>
+        <div class="input-group">
+            <input type="text" id="user" placeholder="Username">
+        </div>
+        <div class="input-group">
+            <input type="password" id="pass" placeholder="Password">
+        </div>
+        <button onclick="login()" class="login-btn">Sign In</button>
+    </div>
+</div>
+
+<div id="dashboard" class="hidden glass-panel">
+
+    <nav>
+        <h1>Staff Portal</h1>
+        <button onclick="logout()" class="logout-btn">Logout</button>
+    </nav>
+
+    <div class="container">
+
+        <div id="doctor-section" style="display:none;">
+            <h3>Add New Patient Entry</h3>
+
+            <div class="form-grid">
+                <input type="text" id="pName" placeholder="Patient Name">
+                <input type="text" id="pCond" placeholder="Condition">
+
+                <input type="text" id="pHospital" placeholder="Hospital Name">
+                <input type="text" id="pDoctor" placeholder="Doctor Name">
+
+                <input type="text" id="pMedication" placeholder="Medication">
+                <input type="text" id="pDuration" placeholder="Duration (e.g. 7 days)">
+            </div>
+
+            <button onclick="saveEntry()" class="save-btn">Save Record</button>
+        </div>
+
+        <div class="table-container">
+            <h3>Medical History Logs</h3>
+            <div class="search-container" style="display: flex; gap: 10px; margin-bottom: 20px;">
+                <input type="text" id="searchInput"
+                       placeholder="🔍 Search by Patient Name..."
+                       onkeyup="if(event.key === 'Enter') searchTable()"
+                       style="margin: 0; flex: 1;">
+                <button onclick="searchTable()" style="width: auto; margin: 0; padding: 0 24px;">Search</button>
+            </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                <tr>
+                    <th>Patient Name</th>
+                    <th>Condition</th>
+                    <th>Hospital</th>
+                    <th>Doctor</th>
+                    <th>Medication</th>
+                    <th>Duration</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
