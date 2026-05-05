@@ -20,9 +20,9 @@ public class DataInitializer implements CommandLineRunner {
     @Override
     public void run(String... args) {
         if (userRepository.count() == 0) {
-            createUser("admin", "admin123", "ADMIN");
-            createUser("doctor", "doc123", "DOCTOR");
-            createUser("nurse", "nurse123", "NURSE");
+            createUser("admin", "admin", "ADMIN");
+            createUser("doctor", "doctor", "DOCTOR");
+            createUser("patient", "patient", "PATIENT");
         }
     }
 

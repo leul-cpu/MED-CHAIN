@@ -24,13 +24,14 @@ function login() {
     }
 
   
-    const formData = new FormData();
+    const formData = new URLSearchParams();
     formData.append('username', username);
     formData.append('password', password);
 
     fetch('/login', {
         method: 'POST',
-        body: formData
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: formData.toString()
     })
         .then(response => {
             // Spring Security redirects to ?error on failure
