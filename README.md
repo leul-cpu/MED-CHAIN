@@ -1,36 +1,51 @@
-# MED-CHAIN: Medical Record API
+# MED-CHAIN: Secure Medical Records System
 
-**MED-CHAIN** is a secure, backend RESTful API built with **Java** and **Spring Boot**. It is designed to manage medical records, allowing authorized medical personnel (Doctors and Admins) to add and delete patient records, while providing search capabilities.
-
-> **Note:** This repository contains the **backend code** for the application. It is not a static website, so it is not hosted on GitHub Pages. You can clone this repository to run the API locally or deploy it to a backend hosting service (like Render, Heroku, or AWS).
+**MED-CHAIN** is a secure, full-stack application built with **Java**, **Spring Boot**, and Vanilla JS. It is designed to manage medical records securely, allowing medical personnel to manage patients while ensuring strict data privacy through JWT authentication and data segregation.
 
 ## 🚀 Tech Stack
 * **Language:** Java 21
 * **Framework:** Spring Boot 3.2.4
-* **Security:** Spring Security
+* **Security:** Spring Security (Stateless JWT Authentication)
 * **Database:** MySQL & Spring Data JPA
+* **Frontend:** HTML5, CSS3 (Glassmorphism UI), Vanilla JavaScript
 * **Tools:** Maven, Lombok
 
 ## ⚙️ Features & Capabilities
-* **Role-Based Access Control (RBAC):** Uses Spring Security to ensure only users with `ADMIN` or `DOCTOR` roles can modify or delete records.
-* **RESTful Endpoints:** Clean and structured API endpoints for CRUD operations.
-* **Database Integration:** Configured to work seamlessly with a MySQL relational database.
+* **JWT Authentication:** Secure, stateless login system using JSON Web Tokens.
+* **Role-Based Access Control (RBAC):** `ADMIN`, `DOCTOR`, and `PATIENT` roles with distinct permissions.
+* **Data Segregation:** Patients can *only* view their own medical history. Doctors and Admins have global access.
+* **File Uploads:** Ability to attach PDF or image files to individual medical records.
+* **Pagination & Sorting:** Optimized database queries utilizing Spring Data `Pageable` for large datasets.
+* **Admin Dashboard:** Admins can dynamically create and remove users from the system.
+* **Premium UI:** A modern, dark-themed glassmorphism frontend with animated backgrounds, modals, and toast notifications.
 
 ## 📡 API Endpoints
 
-Here are the primary endpoints available in this application:
+### Authentication
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| `POST` | `/api/auth/login` | Authenticates user and returns JWT token |
 
+### Medical Records
 | Method | Endpoint | Description | Access Level |
 | :--- | :--- | :--- | :--- |
-| `GET` | `/api/user/role` | Returns the current user's role | All Authenticated Users |
+| `GET` | `/api/medical/all` | Paginated list of records (Segregated by User) | All Users |
+| `GET` | `/api/medical/search?name=` | Search records by patient name (Paginated) | All Users |
 | `POST` | `/api/medical/add` | Adds a new medical record | `ADMIN`, `DOCTOR` |
-| `GET` | `/api/medical/all` | Retrieves a list of all medical records | All Users |
-| `DELETE` | `/api/medical/delete/{id}` | Deletes a specific medical record by ID | `ADMIN`, `DOCTOR` |
-| `GET` | `/api/medical/search?name=` | Searches for records by patient name | All Users |
+| `PUT` | `/api/medical/update/{id}` | Edits an existing record | `ADMIN`, `DOCTOR` |
+| `POST` | `/api/medical/upload/{id}` | Uploads an attachment to a record | `ADMIN`, `DOCTOR` |
+| `DELETE` | `/api/medical/delete/{id}` | Deletes a specific record | `ADMIN`, `DOCTOR` |
+
+### User Management
+| Method | Endpoint | Description | Access Level |
+| :--- | :--- | :--- | :--- |
+| `GET` | `/api/admin/users` | List all system users | `ADMIN` |
+| `POST` | `/api/admin/users` | Create a new user | `ADMIN` |
+| `DELETE` | `/api/admin/users/{id}`| Delete a user | `ADMIN` |
 
 ## 🛠️ How to Run Locally
 
-If you are a recruiter or developer wanting to test this API locally, follow these steps:
+If you are a recruiter or developer wanting to test this application locally, follow these steps:
 
 1. **Clone the repository:**
    ```bash
@@ -41,7 +56,7 @@ If you are a recruiter or developer wanting to test this API locally, follow the
    cd MED-CHAIN/MED-CHAIN-main
    ```
 3. **Configure your Database:**
-   Ensure you have MySQL running. Open `src/main/resources/application.properties` (or `application.yml`) and update your database credentials:
+   Ensure you have MySQL running. Open `src/main/resources/application.properties` and update your database credentials:
    ```properties
    spring.datasource.url=jdbc:mysql://localhost:3306/your_database_name
    spring.datasource.username=root
@@ -52,5 +67,5 @@ If you are a recruiter or developer wanting to test this API locally, follow the
    ```bash
    ./mvnw spring-boot:run
    ```
-5. **Test the Endpoints:**
-   You can now use tools like **Postman** or **cURL** to send requests to `http://localhost:8080/api/...`
+5. **Access the Application:**
+   Open your browser and navigate to `http://localhost:8080/`. You can log in using the demo accounts automatically created on the first run (`admin`, `doctor`, `patient` - passwords match the usernames).
