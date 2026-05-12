@@ -1,7 +1,7 @@
-package com.leul.medapp.repository;
+package com.leul.medchain.repository;
 
 
-import com.leul.medapp.model.MedicalRecord;
+import com.leul.medchain.model.MedicalRecord;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,4 +1,4 @@
-package com.leul.medapp.config;
+package com.leul.medchain.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

@@ -1,4 +1,4 @@
-package com.leul.medapp;
+package com.leul.medchain;
 
 
 
@@ -9,8 +9,8 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.event.EventListener;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import com.leul.medapp.model.User;
-import com.leul.medapp.repository.UserRepository;
+import com.leul.medchain.model.User;
+import com.leul.medchain.repository.UserRepository;
 
 import java.awt.*;
 import java.net.URI;

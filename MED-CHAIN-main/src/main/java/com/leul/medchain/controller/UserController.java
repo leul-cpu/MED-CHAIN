@@ -1,7 +1,7 @@
-package com.leul.medapp.controller;
+package com.leul.medchain.controller;
 
-import com.leul.medapp.model.User;
-import com.leul.medapp.repository.UserRepository;
+import com.leul.medchain.model.User;
+import com.leul.medchain.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -27,6 +27,9 @@ public class UserController {
 
     @PostMapping
     public User createUser(@RequestBody User user) {
+        if (userRepository.findByUsername(user.getUsername()).isPresent()) {
+            throw new RuntimeException("Username already exists");
+        }
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
     }

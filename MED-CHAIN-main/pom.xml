@@ -8,11 +8,11 @@
 		<version>3.2.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
-	<artifactId>medapp</artifactId>
+	<groupId>com.leul</groupId>
+	<artifactId>medchain</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>medapp</name>
-	<description>Demo project for Spring Boot</description>
+	<name>med-chain</name>
+	<description>MED-CHAIN: Secure Medical Records System</description>
 	<url/>
 	<licenses>
 		<license/>

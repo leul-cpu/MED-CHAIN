@@ -1,4 +1,4 @@
-package com.leul.medapp.model;
+package com.leul.medchain.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;

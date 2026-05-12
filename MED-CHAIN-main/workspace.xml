@@ -69,7 +69,7 @@
     <configuration name="MedappApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
       <module name="medapp" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.medapp.MedappApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.leul.medchain.MedappApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

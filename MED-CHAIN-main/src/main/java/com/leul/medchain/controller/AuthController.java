@@ -1,6 +1,6 @@
-package com.leul.medapp.controller;
+package com.leul.medchain.controller;
 
-import com.leul.medapp.config.JwtUtil;
+import com.leul.medchain.config.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

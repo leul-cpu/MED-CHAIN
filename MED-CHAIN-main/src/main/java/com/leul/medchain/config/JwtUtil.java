@@ -1,4 +1,4 @@
-package com.leul.medapp.config;
+package com.leul.medchain.config;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

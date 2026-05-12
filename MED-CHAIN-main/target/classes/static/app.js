@@ -316,8 +316,8 @@ function loadUsers() {
 }
 
 function createUser() {
-    const uName = document.getElementById('uName').value;
-    const uPass = document.getElementById('uPass').value;
+    const uName = document.getElementById('uName').value.trim();
+    const uPass = document.getElementById('uPass').value.trim();
     const uRole = document.getElementById('uRole').value;
     
     if(!uName || !uPass) return showToast("Username and Password required", "error");
@@ -326,13 +326,18 @@ function createUser() {
         method: 'POST',
         headers: getAuthHeaders(),
         body: JSON.stringify({username: uName, password: uPass, role: uRole})
-    }).then(res => {
+    }).then(async res => {
         if(res.ok) {
             showToast("User created");
             loadUsers();
             document.getElementById('uName').value = '';
             document.getElementById('uPass').value = '';
+        } else {
+            const data = await res.json().catch(() => ({}));
+            showToast(data.message || "Failed to create user (username might already exist)", "error");
         }
+    }).catch(err => {
+        showToast("Error connecting to server", "error");
     });
 }
 

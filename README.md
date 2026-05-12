@@ -49,19 +49,20 @@ If you are a recruiter or developer wanting to test this application locally, fo
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/MED-CHAIN.git
+   git clone https://github.com/leul-cpu/MED-CHAIN.git
    ```
 2. **Navigate to the project directory:**
    ```bash
    cd MED-CHAIN/MED-CHAIN-main
    ```
 3. **Configure your Database:**
-   Ensure you have MySQL running. Open `src/main/resources/application.properties` and update your database credentials:
+   Ensure you have MySQL running. The application is configured to create the database automatically if it does not exist. Check `src/main/resources/application.properties` to ensure the credentials match your MySQL setup:
    ```properties
-   spring.datasource.url=jdbc:mysql://localhost:3306/your_database_name
+   spring.datasource.url=jdbc:mysql://localhost:3306/medical_pro_db?createDatabaseIfNotExist=true
    spring.datasource.username=root
    spring.datasource.password=your_password
    ```
+   *(Note: Update `spring.datasource.password` to match your local MySQL root password)*
 4. **Run the Application:**
    Use the Maven wrapper to start the Spring Boot server:
    ```bash

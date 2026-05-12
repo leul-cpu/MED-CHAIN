@@ -1,7 +1,7 @@
-package com.leul.medapp.repository;
+package com.leul.medchain.repository;
 
 
-import com.leul.medapp.model.User;
+import com.leul.medchain.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import java.util.Optional;
