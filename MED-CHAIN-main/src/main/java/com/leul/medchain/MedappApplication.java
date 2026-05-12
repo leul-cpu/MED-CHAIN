@@ -1,17 +1,16 @@
-package com.example.medapp;
+package com.leul.medapp;
 
 
 
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.event.EventListener;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import com.example.medapp.model.User;
-import com.example.medapp.repository.UserRepository;
+import com.leul.medapp.model.User;
+import com.leul.medapp.repository.UserRepository;
 
 import java.awt.*;
 import java.net.URI;

@@ -1,7 +1,7 @@
-package com.example.medapp.repository;
+package com.leul.medapp.repository;
 
 
-import com.example.medapp.model.User;
+import com.leul.medapp.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import java.util.Optional;

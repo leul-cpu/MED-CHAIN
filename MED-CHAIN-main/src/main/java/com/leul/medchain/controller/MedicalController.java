@@ -1,7 +1,7 @@
-package com.example.medapp.controller;
+package com.leul.medapp.controller;
 
-import com.example.medapp.model.MedicalRecord;           
-import com.example.medapp.repository.MedicalRecordRepository; 
+import com.leul.medapp.model.MedicalRecord;
+import com.leul.medapp.repository.MedicalRecordRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

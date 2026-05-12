@@ -1,8 +1,8 @@
-package com.example.medapp.util;
+package com.leul.medapp.util;
 
 
-import com.example.medapp.model.User;
-import com.example.medapp.repository.UserRepository;
+import com.leul.medapp.model.User;
+import com.leul.medapp.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;

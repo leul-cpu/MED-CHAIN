@@ -1,4 +1,4 @@
-package com.example.medapp.model; 
+package com.leul.medapp.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;

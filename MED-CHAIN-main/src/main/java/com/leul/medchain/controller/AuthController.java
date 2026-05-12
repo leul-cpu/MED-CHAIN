@@ -1,6 +1,6 @@
-package com.example.medapp.controller;
+package com.leul.medapp.controller;
 
-import com.example.medapp.config.JwtUtil;
+import com.leul.medapp.config.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

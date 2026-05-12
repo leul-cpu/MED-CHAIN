@@ -1,4 +1,4 @@
-package com.example.medapp.config;
+package com.leul.medapp.config;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

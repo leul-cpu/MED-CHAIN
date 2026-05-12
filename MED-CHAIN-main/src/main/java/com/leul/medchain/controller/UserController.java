@@ -1,7 +1,7 @@
-package com.example.medapp.controller;
+package com.leul.medapp.controller;
 
-import com.example.medapp.model.User;
-import com.example.medapp.repository.UserRepository;
+import com.leul.medapp.model.User;
+import com.leul.medapp.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.password.PasswordEncoder;

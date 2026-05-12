@@ -1,8 +1,8 @@
-package com.example.medapp.service;
+package com.leul.medapp.service;
 
 
-import com.example.medapp.model.User;
-import com.example.medapp.repository.UserRepository;
+import com.leul.medapp.model.User;
+import com.leul.medapp.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
