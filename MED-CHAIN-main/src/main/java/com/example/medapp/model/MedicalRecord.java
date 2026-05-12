@@ -1,6 +1,7 @@
 package com.example.medapp.model; 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import java.util.Date;
 
 @Entity
@@ -10,12 +11,17 @@ public class MedicalRecord {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotBlank(message = "Patient name is required")
     private String patientName;
+    @NotBlank(message = "Condition name is required")
     private String conditionName;
     private String hospitalName;
     private String medication;
     private String doctorName;
     private String duration;
+
+    private String patientUsername;
+    private String attachmentPath;
 
     private Date entryDate = new Date();
 
@@ -36,5 +42,9 @@ public class MedicalRecord {
     public void setDuration(String duration) { this.duration = duration; }
     public Date getEntryDate() { return entryDate; }
     public void setEntryDate(Date entryDate) { this.entryDate = entryDate; }
+    public String getPatientUsername() { return patientUsername; }
+    public void setPatientUsername(String patientUsername) { this.patientUsername = patientUsername; }
+    public String getAttachmentPath() { return attachmentPath; }
+    public void setAttachmentPath(String attachmentPath) { this.attachmentPath = attachmentPath; }
 
 }
