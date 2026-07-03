@@ -4,6 +4,7 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
@@ -16,11 +17,15 @@ import java.util.function.Function;
 @Component
 public class JwtUtil {
 
-    private static final String SECRET = "5367566B59703373367639792F423F4528482B4D6251655468576D5A71347437";
+    // This dynamically pulls the secret string from your application.properties file
+    @Value("${jwt.secret}")
+    private String secret;
+
     public static final long JWT_TOKEN_VALIDITY = 5 * 60 * 60;
 
     private Key getSignKey() {
-        byte[] keyBytes = io.jsonwebtoken.io.Decoders.BASE64.decode(SECRET);
+        // Reads your new non-hardcoded variable safely
+        byte[] keyBytes = io.jsonwebtoken.io.Decoders.BASE64.decode(secret);
         return Keys.hmacShaKeyFor(keyBytes);
     }
 
